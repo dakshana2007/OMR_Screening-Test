@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NVS-CoE Selection Test 2027 - OMR Response</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--p:#1f3f8f;--pd:#132a63;--pl:#e9eef9;--bg:#f3f5f9;--ink:#1a2233;--mut:#5a6579;--ln:#d2d9e6;--ok:#177245;--gold:#c8a13a}
+*{box-sizing:border-box}
+body{margin:0;font-family:Figtree,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+h1,h2,.q{font-family:'Source Serif 4',Georgia,serif}
+.strip{position:fixed;left:0;top:0;bottom:0;width:14px;background:repeating-linear-gradient(var(--pd) 0 8px,transparent 8px 20px);opacity:.9}
+header{background:var(--pd);color:#fff;padding:34px 20px 70px 40px;border-bottom:4px solid var(--gold)}
+header h1{margin:0;font-size:clamp(26px,5vw,44px);font-weight:700;letter-spacing:-.2px}
+header p{margin:6px 0 0;opacity:.9;max-width:60ch}
+main{max-width:860px;margin:-46px auto 60px;padding:0 16px 0 34px}
+.card{background:#fff;border:1px solid var(--ln);border-top:4px solid var(--p);border-radius:10px;padding:22px;box-shadow:0 6px 24px rgba(19,42,99,.10)}
+.steps{display:flex;gap:8px;margin-bottom:18px}
+.steps div{flex:1;text-align:center;font-weight:600;font-size:14px;padding:9px 4px;border-radius:8px;background:var(--pl);color:var(--pd)}
+.steps .on{background:var(--p);color:#fff}.steps .done{background:var(--pd);color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
+.full{grid-column:1/-1}
+@media(max-width:620px){.grid{grid-template-columns:1fr}}
+label,.lab{display:block;font-weight:600;font-size:14px;margin-bottom:5px}
+.hint{font-weight:400;color:var(--mut);font-size:12.5px}
+input,select{width:100%;padding:11px 12px;border:1.5px solid var(--ln);border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
+input:focus,select:focus,button:focus-visible{outline:3px solid #b9c9f0;border-color:var(--p)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--ln);background:#fff;border-radius:8px;padding:8px 16px;font:inherit;font-weight:500;cursor:pointer;color:var(--ink)}
+.chip.sel{background:var(--p);border-color:var(--p);color:#fff}
+.sect{margin:0 0 4px;color:var(--pd)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
+.tab{flex:1;min-width:92px;border:1.5px solid var(--p);background:#fff;color:var(--pd);border-radius:10px;padding:9px 6px;font:inherit;font-weight:600;cursor:pointer}
+.tab.on{background:var(--p);color:#fff}.tab small{display:block;font-weight:500;opacity:.85}
+.row{display:flex;align-items:center;gap:14px;padding:8px 6px;border-bottom:1px dashed var(--ln)}
+.row:nth-child(even){background:#f8f9fc}
+.q{width:38px;font-weight:800;color:var(--pd);font-size:17px}
+.b{width:42px;height:42px;border-radius:50%;border:2px solid var(--p);background:#fff;color:var(--p);font-weight:600;font-size:16px;cursor:pointer;transition:transform .12s}
+.b:active{transform:scale(.92)}
+.b.sel{background:var(--pd);border-color:var(--pd);color:#fff}
+.bar{height:8px;background:var(--pl);border-radius:8px;overflow:hidden;margin:4px 0 14px}
+.bar i{display:block;height:100%;width:0;background:var(--p);transition:width .25s}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:22px}
+.btn{border:0;border-radius:8px;padding:13px 26px;font:inherit;font-weight:700;font-size:16px;cursor:pointer;background:var(--p);color:#fff}
+.btn.ghost{background:var(--pl);color:var(--pd)}
+.btn:disabled{opacity:.6;cursor:wait}
+.err{color:#c00;font-size:13px;min-height:18px;margin-top:10px;font-weight:600}
+.done-box{text-align:center;padding:30px 10px}
+.done-box .tick{width:78px;height:78px;border-radius:50%;background:var(--ok);color:#fff;font-size:44px;display:grid;place-items:center;margin:0 auto 14px}
+.demo{background:#fff3cd;border:1px solid #f0d36a;border-radius:10px;padding:10px 14px;font-size:13px;margin-bottom:14px}
+[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="strip" aria-hidden="true"></div>
+<header>
+  <h1>NVS-CoE Selection Test 2027</h1>
+  <p>Enter your OMR sheet details and answers here. Fill everything exactly as marked on your paper OMR sheet.</p>
+</header>
+<main>
+<div class="card">
+  <div id="demo" class="demo" hidden>Preview mode: responses are not saved. Add your Apps Script URL in <b>API_URL</b> to collect responses.</div>
+  <div class="steps" id="steps"><div>Details</div><div>Profile</div><div>Answers</div></div>
+
+  <section id="s0" class="grid">
+    <div><label for="omr">OMR No.</label><input id="omr" inputmode="numeric" maxlength="5" placeholder="60503" data-re="^\d{5}$" data-m="OMR No. must be 5 digits"></div>
+    <div><label for="doe">Date of exam</label><input id="doe" type="date"></div>
+    <div class="full"><label for="name">Student name <span class="hint">as per Class 10th certificate</span></label><input id="name" autocomplete="name" placeholder="First  Middle  Last"></div>
+    <div class="full"><label for="school">School name</label><input id="school"></div>
+    <div><label for="roll">NCST roll no. <span class="hint">12 digits</span></label><input id="roll" inputmode="numeric" maxlength="12" data-re="^\d{12}$" data-m="NCST roll no. must be 12 digits"></div>
+    <div><label for="scode">School code <span class="hint">5 digits</span></label><input id="scode" inputmode="numeric" maxlength="5" data-re="^\d{5}$" data-m="School code must be 5 digits"></div>
+    <div><label for="mobile">Mobile number</label><input id="mobile" inputmode="numeric" maxlength="10" autocomplete="tel" data-re="^[6-9]\d{9}$" data-m="Enter a valid 10-digit mobile number"></div>
+    <div><label for="email">Email ID</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+    <div class="full"><label for="income">Annual family income from all sources</label>
+      <select id="income"><option value="">Select income range</option></select></div>
+  </section>
+
+  <section id="s1" class="grid" hidden>
+    <div class="full"><div class="lab">Preferred choice for further study <span class="hint">each stream can be used once</span></div></div>
+    <div><label for="p0">1st choice</label><select id="p0" class="pref"></select></div>
+    <div><label for="p1">2nd choice</label><select id="p1" class="pref"></select></div>
+    <div><label for="p2">3rd choice</label><select id="p2" class="pref"></select></div>
+    <div><label for="p3">4th choice</label><select id="p3" class="pref"></select></div>
+    <div class="full"><div class="lab">Category</div><div class="chips" data-k="cat" data-o="GEN,GEN-EWS,OBC-NCL,SC,ST"></div></div>
+    <div><div class="lab">Physical disabilities (40% +)</div><div class="chips" data-k="dis" data-o="Yes,No"></div></div>
+    <div><div class="lab">Gender</div><div class="chips" data-k="gen" data-o="Male,Female"></div></div>
+  </section>
+
+  <section id="s2" hidden>
+    <div class="lab">Answered <span id="cnt">0</span> of 60</div>
+    <div class="bar"><i id="fill"></i></div>
+    <div class="tabs" id="tabs"></div>
+    <h2 class="sect" id="sectitle"></h2>
+    <div id="rows"></div>
+    <p class="hint">Tap an option to mark it. Tap it again to clear.</p>
+  </section>
+
+  <div class="err" id="err" role="alert"></div>
+  <div class="nav"><button class="btn ghost" id="back" hidden>Back</button><button class="btn" id="next" style="margin-left:auto">Next</button></div>
+</div>
+<div class="card done-box" id="done" hidden style="margin-top:0">
+  <div class="tick">&#10003;</div><h2>Response submitted</h2>
+  <p>Thank you, <b id="dname"></b>. Your OMR responses have been recorded.</p>
+  <button class="btn ghost" onclick="newResponse()">Submit another response</button>
+</div>
+</main>
+
+<script>
+// Paste your Apps Script Web app URL (ends with /exec) between the quotes:
+const API_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+// true = ask for confirmation if some questions are blank
+const WARN_BLANK = true;
+
+const INCOME=["Less than Rs. 1,00,000","Rs. 1,00,000 - 2,00,000","Rs. 2,00,000 - 3,00,000","Rs. 3,00,000 - 4,00,000","Rs. 4,00,000 - 5,00,000","Rs. 5,00,000 - 6,00,000","Rs. 6,00,000 - 7,00,000","Rs. 7,00,000 - 8,00,000","More than Rs. 8,00,000"];
+const STREAMS=["Engineering","Medical","Commerce","Humanities"];
+const SEC=["A","B","C","D","E"];
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const S={step:0,sec:0,ans:{},pick:{}};
+const demo = API_URL.startsWith("PASTE");
+$("#demo").hidden=!demo;
+
+INCOME.forEach((t,i)=>$("#income").add(new Option(String.fromCharCode(65+i)+" - "+t,String.fromCharCode(65+i)+" - "+t)));
+$$(".pref").forEach(s=>{s.add(new Option("Select stream",""));STREAMS.forEach(x=>s.add(new Option(x,x)));
+  s.onchange=()=>{const used=$$(".pref").map(e=>e.value);$$(".pref").forEach(e=>[...e.options].forEach(o=>o.disabled=o.value&&o.value!==e.value&&used.includes(o.value)))}});
+$$("input[inputmode=numeric]").forEach(i=>i.oninput=()=>i.value=i.value.replace(/\D/g,""));
+
+$$(".chips").forEach(c=>{const k=c.dataset.k;c.dataset.o.split(",").forEach(o=>{const b=document.createElement("button");b.type="button";b.className="chip";b.textContent=o;
+  b.onclick=()=>{S.pick[k]=o;[...c.children].forEach(x=>x.classList.toggle("sel",x===b))};c.appendChild(b)})});
+
+function count(s){let n=0;for(let i=1;i<=12;i++)if(S.ans[s*12+i])n++;return n}
+function renderAns(){
+  const total=Object.keys(S.ans).length;$("#cnt").textContent=total;$("#fill").style.width=total/60*100+"%";
+  $("#tabs").innerHTML="";SEC.forEach((n,i)=>{const t=document.createElement("button");t.type="button";t.className="tab"+(i===S.sec?" on":"");
+    t.innerHTML="Section "+n+"<small>"+count(i)+"/12</small>";t.onclick=()=>{S.sec=i;renderAns()};$("#tabs").appendChild(t)});
+  $("#sectitle").textContent="Section "+SEC[S.sec]+" - correct answers";
+  const box=$("#rows");box.innerHTML="";
+  for(let i=1;i<=12;i++){const q=S.sec*12+i,r=document.createElement("div");r.className="row";r.innerHTML='<span class="q">'+q+'</span>';
+    "abcd".split("").forEach(l=>{const b=document.createElement("button");b.type="button";b.className="b"+(S.ans[q]===l?" sel":"");b.textContent=l;b.setAttribute("aria-label","Question "+q+" option "+l);
+      b.onclick=()=>{S.ans[q]===l?delete S.ans[q]:S.ans[q]=l;renderAns()};r.appendChild(b)});box.appendChild(r)}
+}
+
+function val(){
+  const e=[];
+  if(S.step===0){
+    for(const el of $$("#s0 input,#s0 select")){
+      if(!el.value.trim())return el.labels[0].innerText.split("\n")[0]+" is required";
+      if(el.dataset.re&&!new RegExp(el.dataset.re).test(el.value))return el.dataset.m;
+      if(el.type==="email"&&!/^\S+@\S+\.\S+$/.test(el.value))return "Enter a valid email ID"}
+  }
+  if(S.step===1){
+    if($$(".pref").some(p=>!p.value))return "Choose a stream for all four preferences";
+    if(!S.pick.cat)return "Select your category";
+    if(!S.pick.dis)return "Select physical disability: Yes or No";
+    if(!S.pick.gen)return "Select your gender";
+  }
+  return "";
+}
+function show(){
+  $$("section").forEach((s,i)=>s.hidden=i!==S.step);
+  $$("#steps div").forEach((d,i)=>d.className=i===S.step?"on":i<S.step?"done":"");
+  $("#back").hidden=S.step===0;$("#next").textContent=S.step===2?"Submit response":"Next";
+  $("#err").textContent="";if(S.step===2)renderAns();scrollTo({top:0,behavior:"smooth"});
+}
+$("#back").onclick=()=>{S.step--;show()};
+$("#next").onclick=async()=>{
+  const m=val();if(m){$("#err").textContent=m;return}
+  if(S.step<2){S.step++;show();return}
+  const blank=60-Object.keys(S.ans).length;
+  if(WARN_BLANK&&blank&&!S.warned){S.warned=true;$("#err").textContent=blank+" question(s) are still blank. Tap Submit response again to send anyway.";return}
+  const g=id=>$("#"+id).value.trim();
+  const data={omr:g("omr"),doe:g("doe"),email:g("email"),name:g("name"),school:g("school"),roll:g("roll"),scode:g("scode"),income:g("income"),mobile:g("mobile"),
+    prefs:$$(".pref").map(p=>p.value),cat:S.pick.cat,dis:S.pick.dis,gen:S.pick.gen,answers:Array.from({length:60},(_,i)=>S.ans[i+1]||"")};
+  const btn=$("#next");btn.disabled=true;btn.textContent="Submitting...";
+  try{
+    if(demo){console.log("DEMO payload",data);await new Promise(r=>setTimeout(r,600))}
+    else await fetch(API_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(data)});
+    $(".card").hidden=true;$("#done").hidden=false;$("#dname").textContent=data.name;scrollTo(0,0);
+  }catch(x){$("#err").textContent="Could not submit. Check your internet connection and try again.";btn.disabled=false;btn.textContent="Submit response"}
+};
+function newResponse(){
+  $$("#s0 input,#s0 select,#s1 select").forEach(e=>e.value="");
+  $$(".pref").forEach(p=>[...p.options].forEach(o=>o.disabled=false));
+  $$(".chip").forEach(c=>c.classList.remove("sel"));
+  S.step=0;S.sec=0;S.ans={};S.pick={};S.warned=false;
+  const b=$("#next");b.disabled=false;
+  $("#done").hidden=true;$(".card").hidden=false;show();
+}
+show();
+</script>
+</body>
+</html>
